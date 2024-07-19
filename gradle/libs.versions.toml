@@ -1,0 +1,71 @@
+[versions]
+agp = "8.3.2"
+kotlin = "1.9.22"
+coreKtx = "1.13.1"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.6.1"
+material = "1.12.0"
+activity = "1.9.0"
+constraintlayout = "2.1.4"
+firebaseBom="33.0.0"
+firebaseAnalytics="22.0.0"
+googleServices="4.4.1"
+googleServicesVersion = "4.4.1"
+firebaseMessaging = "24.0.0"
+roomRuntime = "2.6.1"
+livedata = "2.8.0"
+viewmodel = "2.8.0"
+ksp = "1.9.10-1.0.13"
+roomKsp = "2.6.1"
+roomTest = "2.6.1"
+jetBrain = "1.9.20"
+coroutineCore = "1.7.3"
+coroutineAndroid = "1.7.3"
+room = "2.6.1"
+kspCompiler = "1.5.21"
+roomCompiler = "2.6.1"
+kspApi = "1.9.10-1.0.13"
+commonJava = "2.8.0"
+firebaseMessagingKtx = "24.0.0"
+
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+google-firebase = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+google-firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref="firebaseAnalytics" }
+google-services = { group = "com.google.gms", name = "google-services", version.ref = "googleServicesVersion" }
+firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebaseMessaging" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomRuntime" }
+lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "livedata" }
+lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "viewmodel" }
+lifecycle-common-java = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "commonJava" }
+
+ksp = { group = "androidx.room", name = "room-compiler", version.ref = "roomKsp" }
+room-test = { group = "androidx.room", name = "room-testing", version.ref = "roomTest" }
+jetbrains = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk7", version.ref = "jetBrain" }
+coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutineCore" }
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutineAndroid" }
+room = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+ksp-compiler =  { group = "com.google.devtools.ksp", name = "ksp-compiler", version.ref = "kspCompiler" }
+room-compiler = {  group = "androidx.room", name = "room-compiler", version.ref = "roomCompiler" }
+devtools-ksp = {  group = "com.google.devtools.ksp", name= "symbol-processing-api", version.ref= "kspApi" }
+firebase-messaging-ktx = { group = "com.google.firebase", name = "firebase-messaging-ktx", version.ref = "firebaseMessagingKtx" }
+
+
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+googleServices = { id = "com.google.gms.google-services", version.ref= "googleServices" }
+devtoolsKsp = {  id = "com.google.devtools.ksp", version.ref= "ksp" }
+
