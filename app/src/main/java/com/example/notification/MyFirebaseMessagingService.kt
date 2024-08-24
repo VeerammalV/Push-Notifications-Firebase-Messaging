@@ -51,8 +51,21 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                     channelId,
                     getString(R.string.notification_channel_name),
                     NotificationManager.IMPORTANCE_HIGH
-                )
+                ).apply {
+                    lockscreenVisibility = Notification.VISIBILITY_PUBLIC
+                }
                 notificationManager.createNotificationChannel(channel)
+            }
+
+              val intent = Intent(this, MainActivity::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+
+            val pendingIntent: PendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+
+            } else {
+                PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
             }
 
             val notificationBuilder = NotificationCompat.Builder(this, channelId)
@@ -60,6 +73,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                 .setContentText(body)
                 .setSmallIcon(R.drawable.baseline_notifications_active_24)
                 .setAutoCancel(true)
+                .setContentIntent(pendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
 
             notificationManager.notify(0, notificationBuilder.build())
